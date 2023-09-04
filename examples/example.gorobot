@@ -1,0 +1,19 @@
+*** Settings ***
+### 支持case超时时间定义
+Test Timeout 
+
+
+*** Packages ***
+### 支持外部包导入
+Library
+
+
+*** Variables ***
+### 支持定义全局变量
+
+
+*** Test Cases ***
+
+
+*** Keywords ***
+### 支持定义case内关键字
