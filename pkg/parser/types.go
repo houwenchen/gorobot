@@ -7,7 +7,7 @@ const (
 	Extention string = ".gorobot"
 )
 
-type Settings struct {
+type Settings1 struct {
 	Document string
 	Timeout  time.Duration
 }
