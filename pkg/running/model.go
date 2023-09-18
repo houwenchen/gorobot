@@ -1,7 +1,7 @@
 package running
 
-type TestSuite struct {
+type TestSuite interface {
 }
 
-type ResourceFile struct {
+type ResourceFile interface {
 }
