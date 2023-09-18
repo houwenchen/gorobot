@@ -1,29 +1,30 @@
 package running
 
-import (
-	"context"
-	"houwenchen/gorobot/pkg/parser"
-	"time"
-)
+// import (
+// 	"context"
+// 	"time"
 
-// 整个工具的对外接口
-// 将各个小接口集成进来
-type Runner interface {
-	parser.Parser
+// 	"github.com/google/cel-go/parser"
+// )
 
-	Run() error
-}
+// // 整个工具的对外接口
+// // 将各个小接口集成进来
+// type Runner interface {
+// 	parser.Parser
 
-type runner struct {
-}
+// 	Run() error
+// }
 
-func (r *runner) Run() error {
-	return nil
-}
+// type runner struct {
+// }
 
-func (r *runner) setup() (context.Context, context.CancelFunc) {
-	ctx := context.TODO()
-	timeout := 100 * time.Minute
+// func (r *runner) Run() error {
+// 	return nil
+// }
 
-	return context.WithTimeout(ctx, timeout)
-}
+// func (r *runner) setup() (context.Context, context.CancelFunc) {
+// 	ctx := context.TODO()
+// 	timeout := 100 * time.Minute
+
+// 	return context.WithTimeout(ctx, timeout)
+// }
