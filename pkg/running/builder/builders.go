@@ -1,4 +1,4 @@
-package builders
+package builder
 
 type TestSuiteBuilder struct {
 	StandardParsers    map[string]Parser
@@ -32,9 +32,9 @@ func NewTestSuiteBuilder(
 }
 
 func (b *TestSuiteBuilder) get_standard_parsers() map[string]Parser {
-	robot_parser := NewRobotParser()
-	rest_parser := NewRestParser()
-	json_parser := NewJsonParser()
+	// robot_parser := NewRobotParser()
+	// rest_parser := NewRestParser()
+	// json_parser := NewJsonParser()
 
 	return nil
 }
