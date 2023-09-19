@@ -2,6 +2,7 @@ package builder
 
 import (
 	"fmt"
+	"houwenchen/gorobot/pkg/parsing/model"
 	"houwenchen/gorobot/pkg/running"
 	"reflect"
 )
@@ -15,6 +16,9 @@ type Parser interface {
 
 type RobotParser interface {
 	Parser
+
+	ParseModel(model.File, TestDefaults) running.TestSuite
+	ParseResourceModel(model.File) running.ResourceFile
 }
 
 type RestParser interface {
@@ -33,6 +37,7 @@ type parser struct {
 }
 
 type robotParser struct {
+	extensions []interface{}
 }
 
 type restParser struct {
@@ -68,8 +73,13 @@ func (p *parser) ParseResourceFile(path Path) running.ResourceFile {
 	panic(fmt.Sprintf("%s does not support parsing suite files.", p.Name()))
 }
 
-func NewRobotParser() *RobotParser {
-	return nil
+func NewRobotParser() *robotParser {
+	return &robotParser{}
+}
+
+func (rp *robotParser) Name() string {
+	rType := reflect.TypeOf(rp)
+	return rType.String()
 }
 
 func NewRestParser() *RestParser {
